@@ -12,7 +12,7 @@ npx astro add tailwind
 
 # Belajar GIT
 1. Setting GIT
-```sh
+```
 git config --global user.name "Budi Fikri"
 ```
 config --global user.email "it.azkamulia@gmail.com"
