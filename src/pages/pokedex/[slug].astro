@@ -18,24 +18,24 @@ const pokemon = await res.json()
 
 <MainLayout title={slug}>
   <h3 class="text-center text-3xl font-semibold uppercase">{pokemon.name}</h3>
-  <section class="flex mt-4">
-    <figure class="bg-blue-100 rounded-3xl shadow-lg p-10">
+  <section class="flex flex-wrap  mt-4">
+    <figure class= " flex-2 min-w-[300px]   bg-blue-100 rounded-3xl shadow-lg p-10 ">
 
-      <Image
+      <Image class={'mx-auto'}
         src={pokemon.sprites.other.dream_world.front_default}
         alt="img"
         width={400}
         height={400}
       />
     </figure>
-    <div class="flex-1 px-8 space-y-4">
+    <div class="flex-1 px-8 space-y-4  w-[500px] flex-wrap">
       <Description text="height">{pokemon.height}</Description>
       <Description text="weight">{pokemon.weight} lbs</Description>
       <Description text="abilities">{pokemon.abilities[0].ability.name}
       </Description>
       <Description text="Type">{pokemon.types.map((item) => item.type.name).join(", ")}
       </Description>
-      <Description text="image">{pokemon.sprites.other.dream_world.front_default}
+      <!-- <Description text="image" >{pokemon.sprites.other.dream_world.front_default} -->
     </div>
  
   </section>
