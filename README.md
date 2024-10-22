@@ -1,3 +1,7 @@
+## Source acuan belajar
+youtube : https://www.youtube.com/watch?v=WUAkE3F-dto
+source :  https://github.com/yt-liceDev/learn-astro/blob/main/src/layout/MainLayout.astro
+
 # Install Astro
 
 ```sh
@@ -64,4 +68,24 @@ git push origin master
 11 tarik file github ke local 
 ```
 git pull origin master
+```
+
+# Belajar Astro
+1. Navbar menu agar tidak selalu reload
+```
+---
+import { ViewTransitions } from "astro:transitions"
+---
+<head>
+    <ViewTransitions/>
+</head>
+
+```
+
+2. Optimation Image
+```
+---
+import { Image } from "astro:assets"
+---
+<Image src="image.jpg" alt="image" width="100" height="100" loading="/>
 ```

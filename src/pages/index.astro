@@ -1,14 +1,49 @@
 ---
+import { Image } from "astro:assets"
 import MainLayout  from "../layout/MainLayout.astro"
+
+const res = await fetch(import.meta.env.PUBLIC_BASE_URL + "?limit=20")
+console.log('url pokemon:'+import.meta.env.PUBLIC_BASE_URL + "?limit=10")
+
+const { results } = await res.json()
+results.map((pokemon) => (
+console.log('url image pokemon:'+import.meta.env.PUBLIC_IMG_URL +pokemon.url.slice(34).replace("/", "") +".svg")
+))
+
 ---
 <!-- contoh git -->
 <MainLayout title="pokeDex">
-	<section>
-   <div>
-
-<figure> <img src="" alt=""/>
-
- halooo  testtt
+   <section class="grid xl:grid-cols-5 gap-3 md:grid-cols-4  " >
+      {
+        results.map((pokemon) => (
+          <a href={`/pokedex/${pokemon.name}`}>
+            <div class="bg-white rounded-xl  shadow-xl  hover:bg-yellow-100">
+              <figure class="flex w-[300px] h-[200px]  overflow-hidden mx-auto py-3">
+                <Image class={'items-center object-contain transition-transform duration-200 ease-in-out hover:scale-125'}
+                  src={
+                    import.meta.env.PUBLIC_IMG_URL +
+                    pokemon.url.slice(34).replace("/", "") +
+                    ".svg"
+                  }
+                  alt="pokemon"
+                  width="300"
+                  height="200"
+                />
+              </figure>
+              <div class="pt-1">
+                <p class="text-green-300 text-center text-lg bg-violet-700 mx-20 rounded-t-full pt-2 shadow-xl font-semibold ">{pokemon.name}</p>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </section>
+    <div class="text-center mt-8">
+      <a
+        class="inline-block bg-orange-600 font-bold text-slate-100 px-4 py-2 rounded-lg hover:bg-orange-700 hover:text-slate-200"
+        href="/pokedex">Load More Pokemon</a
+      >
+    </div>
 
 
 </figure>
