@@ -1,6 +1,12 @@
+# Hasil Tampilan WEB
+
+![This is an alt text.](/public/images/web1.png "This is a sample image.")
+
 ## Source acuan belajar
 youtube : https://www.youtube.com/watch?v=WUAkE3F-dto<br/>
 source :  https://github.com/yt-liceDev/learn-astro/blob/main/src/layout/MainLayout.astro
+
+
 
 # Install Astro
 
