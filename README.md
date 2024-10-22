@@ -1,6 +1,8 @@
 # Hasil Tampilan WEB
 
 ![This is an alt text.](/src/asset/images/web1.png "This is a sample image.")
+<br/>
+![This is an alt text.](/src/asset/images/web2.png "This is a sample image.")
 
 ## Source acuan belajar
 youtube : https://www.youtube.com/watch?v=WUAkE3F-dto<br/>
