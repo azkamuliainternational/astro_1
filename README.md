@@ -113,7 +113,7 @@ import Component from "./reactcomponent"
 4. Dinamic route
 install node
 ```
-npx astro install node
+npx astro add node
 ```
 
 perubahan kodenya
