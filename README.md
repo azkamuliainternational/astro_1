@@ -2,7 +2,7 @@
 
 ![This is an alt text.](/src/asset/images/web1.png "This is a sample image.")
 <br/>
-![This is an alt text.](/src/asset/images/web2.png "This is a sample image.")
+![This is an alt text2.](/src/asset/images/web2.png "This is a sample image2.")
 
 ## Source acuan belajar
 youtube : https://www.youtube.com/watch?v=WUAkE3F-dto<br/>
