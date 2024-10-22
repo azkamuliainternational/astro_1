@@ -1,5 +1,5 @@
 ## Source acuan belajar
-youtube : https://www.youtube.com/watch?v=WUAkE3F-dto
+youtube : https://www.youtube.com/watch?v=WUAkE3F-dto<br/>
 source :  https://github.com/yt-liceDev/learn-astro/blob/main/src/layout/MainLayout.astro
 
 # Install Astro
