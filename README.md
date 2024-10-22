@@ -94,3 +94,12 @@ import { Image } from "astro:assets"
 ---
 <Image src="image.jpg" alt="image" width="100" height="100" loading="/>
 ```
+
+3. Memanggil island React
+```
+---
+import Component from "./reactcomponent"
+---
+<Component client:load />
+
+```
