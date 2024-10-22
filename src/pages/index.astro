@@ -7,7 +7,9 @@ console.log('url pokemon:'+import.meta.env.PUBLIC_BASE_URL + "?limit=10")
 
 const { results } = await res.json()
 results.map((pokemon) => (
-console.log('url image pokemon:'+import.meta.env.PUBLIC_IMG_URL +pokemon.url.slice(34).replace("/", "") +".svg")
+// console.log('url image pokemon:'+import.meta.env.PUBLIC_IMG_URL +pokemon.url.slice(34).replace("/", "") +".svg")
+console.log(pokemon.name)
+
 ))
 
 ---

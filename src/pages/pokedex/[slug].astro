@@ -7,26 +7,10 @@ import MainLayout from "../../layout/MainLayout.astro"
 export const prerender = false
 
 
-export const getStaticPaths = () => {    
-
-    const param=
-        {params:{
-            slug:"bulbasaur"           
-        }}
-    console.log(param)
-
-    return [param,
-        {params:{
-            slug:"ivysaur"           
-        }},
-        {params:{
-            slug:"venusaur"           
-        }}
-
-    ];
-} 
 
 const { slug } = Astro.params
+
+
 console.log(`${import.meta.env.PUBLIC_BASE_URL}/${slug}`)
 const res = await fetch(`${import.meta.env.PUBLIC_BASE_URL}/${slug}`)
 const pokemon = await res.json()
@@ -36,9 +20,7 @@ const pokemon = await res.json()
   <h3 class="text-center text-3xl font-semibold uppercase">{pokemon.name}</h3>
   <section class="flex mt-4">
     <figure class="bg-blue-100 rounded-3xl shadow-lg p-10">
-        <!-- <img src={pokemon.sprites.other.dream_world.front_default} alt="img"
-        width="400px"
-        height="400px" > -->
+
       <Image
         src={pokemon.sprites.other.dream_world.front_default}
         alt="img"

@@ -109,3 +109,17 @@ import Component from "./reactcomponent"
 <Component client:load />
 
 ```
+
+4. Dinamic route
+install node
+```
+npx astro install node
+```
+
+perubahan kodenya
+```
+---
+export const prerender = false
+
+---
+```
