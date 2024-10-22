@@ -11,7 +11,12 @@ npm create astro@latest -- --template minimal
 
 ```sh
 npx astro add tailwind
-```
+
+# Install React
+
+```sh
+npx astro add react
+``````
 
 
 # Belajar GIT
