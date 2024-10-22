@@ -123,3 +123,25 @@ export const prerender = false
 
 ---
 ```
+
+5. membuat menu navbar
+```
+---
+const {pathname}=Astro.url
+const lists=[
+    {name:"Home",url:'/'},
+    {name:"PokeDex",url:'/pokedex'},
+]
+const baseClass ="hover:border-b-[3px] hover:border-b-orange-50 hover:text-gray-500"
+---
+
+<nav class="flex items-end justify-between px-16 py-4 bg-gradient-to-br  shadow-md ">
+<h1 class="text-2xl font-semibold">Poke</h1>
+<ul class="flex  gap-x-8">
+    {lists.map(item => (
+        <li class="rounded-md bg-orange-500 px-4 py-2"><a  class:list={[baseClass,{"border-b-[3px] text-orange-50  ":item.url===pathname}]} href={item.url}>{item.name} </a></li>
+    ) )}
+</ul>
+
+</nav>
+```
