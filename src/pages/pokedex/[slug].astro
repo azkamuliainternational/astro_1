@@ -1,0 +1,59 @@
+---
+import type { GetStaticPaths } from "astro";
+import { Image } from "astro:assets"
+import Description from "../../components/Description.astro"
+import MainLayout from "../../layout/MainLayout.astro"
+
+export const prerender = false
+
+
+export const getStaticPaths = () => {    
+
+    const param=
+        {params:{
+            slug:"bulbasaur"           
+        }}
+    console.log(param)
+
+    return [param,
+        {params:{
+            slug:"ivysaur"           
+        }},
+        {params:{
+            slug:"venusaur"           
+        }}
+
+    ];
+} 
+
+const { slug } = Astro.params
+console.log(`${import.meta.env.PUBLIC_BASE_URL}/${slug}`)
+const res = await fetch(`${import.meta.env.PUBLIC_BASE_URL}/${slug}`)
+const pokemon = await res.json()
+---
+
+<MainLayout title={slug}>
+  <h3 class="text-center text-3xl font-semibold uppercase">{pokemon.name}</h3>
+  <section class="flex mt-4">
+    <figure class="bg-blue-100 rounded-3xl shadow-lg p-10">
+        <!-- <img src={pokemon.sprites.other.dream_world.front_default} alt="img"
+        width="400px"
+        height="400px" > -->
+      <Image
+        src={pokemon.sprites.other.dream_world.front_default}
+        alt="img"
+        width={400}
+        height={400}
+      />
+    </figure>
+    <div class="flex-1 px-8 space-y-4">
+      <Description text="height">{pokemon.height}</Description>
+      <Description text="weight">{pokemon.weight} lbs</Description>
+      <Description text="abilities">{pokemon.abilities[0].ability.name}
+      </Description>
+      <Description text="Type">{pokemon.types.map((item) => item.type.name).join(", ")}
+      </Description>
+      <Description text="image">{pokemon.sprites.other.dream_world.front_default}
+    </div>
+  </section>
+</MainLayout>
