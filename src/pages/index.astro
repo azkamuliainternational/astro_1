@@ -2,7 +2,7 @@
 import { Image } from "astro:assets"
 import MainLayout  from "../layout/MainLayout.astro"
 
-const res = await fetch(import.meta.env.PUBLIC_BASE_URL + "?limit=20")
+const res = await fetch(import.meta.env.PUBLIC_BASE_URL + "?limit=10")
 console.log('url pokemon:'+import.meta.env.PUBLIC_BASE_URL + "?limit=10")
 
 const { results } = await res.json()
@@ -13,12 +13,12 @@ console.log('url image pokemon:'+import.meta.env.PUBLIC_IMG_URL +pokemon.url.sli
 ---
 <!-- contoh git -->
 <MainLayout title="pokeDex">
-   <section class="grid xl:grid-cols-5 gap-3 md:grid-cols-4  " >
+   <section class="flex flex-wrap gap-3  justify-center " >
       {
         results.map((pokemon) => (
           <a href={`/pokedex/${pokemon.name}`}>
-            <div class="bg-white rounded-xl  shadow-xl  hover:bg-yellow-100">
-              <figure class="flex w-[300px] h-[200px]  overflow-hidden mx-auto py-3">
+            <div class="bg-blue-100 rounded-xl  shadow-xl  hover:bg-yellow-100">
+              <figure class="flex w-[300px] h-[200px]  overflow-hidden hover:overflow-visible mx-auto py-3">
                 <Image class={'items-center object-contain transition-transform duration-200 ease-in-out hover:scale-125'}
                   src={
                     import.meta.env.PUBLIC_IMG_URL +

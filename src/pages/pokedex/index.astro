@@ -1,8 +1,9 @@
 ---
 import MainLayout  from "../../layout/MainLayout.astro"
+import Card from "../../components/React/Card"
 ---
 <MainLayout title="pokeDex">
-	<h1 class="text-xl">Pokedex</h1>
+	<Card client:load />
 </MainLayout>
 
 <script>
